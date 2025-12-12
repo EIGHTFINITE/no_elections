@@ -5,5 +5,5 @@ tags={
 	"Gameplay"
 	"Leaders"
 }
-supported_version="v4.0.*"
+supported_version="v4.*.*"
 path="mod/no_elections"
