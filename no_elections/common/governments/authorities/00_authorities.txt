@@ -1373,7 +1373,7 @@ auth_hive_mind = {
 		modifier = {
 			empire_size_penalty_mult = -0.25
 			empire_size_districts_mult = 2
-			empire_size_colonies_mult = 2
+			empire_size_colonies_mult = 1
 			diplo_weight_economy_mult = 1
 		}
 	}
