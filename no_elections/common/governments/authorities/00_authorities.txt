@@ -45,6 +45,7 @@
 
 
 auth_democratic = {
+	election_term_years = 10000
 	election_type = oligarchic
 	can_have_emergency_elections = yes
 
@@ -306,6 +307,7 @@ auth_democratic = {
 }
 
 auth_oligarchic = {
+	election_term_years = 20000
 	election_type = oligarchic
 	can_have_emergency_elections = yes
 
@@ -565,6 +567,7 @@ auth_oligarchic = {
 }
 
 auth_dictatorial = {
+	election_term_years = 20000
 	election_type = oligarchic
 	can_have_emergency_elections = yes
 
@@ -1600,6 +1603,7 @@ auth_ancient_machine_intelligence = {
 }
 
 auth_corporate = {
+	election_term_years = 20000
 	election_type = oligarchic
 	can_have_emergency_elections = yes
 	localization_postfix = corporate
