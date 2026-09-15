@@ -434,8 +434,8 @@ auth_oligarchic = {
 			pop_category_rulers_upkeep_mult = 0.15
 			edicts_upkeep_mult = -0.2
 			edicts_cost_mult = -0.75
-			empire_size_districts_mult = -0.10
-			empire_size_colonies_mult = -0.50
+			empire_size_districts_mult = -0.15
+			empire_size_colonies_mult = -0.30
 			show_only_custom_tooltip = no
 		}
 	}
