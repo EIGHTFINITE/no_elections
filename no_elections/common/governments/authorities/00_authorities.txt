@@ -278,6 +278,7 @@ auth_democratic = {
 			pop_factions_produces_mult = 0.4
 			leader_lifespan_add = 20
 			negative_traits_leader = -1
+			show_only_custom_tooltip = no
 		}
 	}
 
@@ -297,6 +298,7 @@ auth_democratic = {
 			empire_size_psionic_pops_mult = -0.05
 			planet_jobs_unity_produces_mult = 0.1
 			pop_political_power = 0.10
+			show_only_custom_tooltip = no
 		}
 	}
 
@@ -412,7 +414,7 @@ auth_oligarchic = {
 			has_country_flag = synth_physical
 		}
 		modifier = {
-			custom_tooltip = auth_cyber_oligarch_ruler_enforcers_tt
+			custom_tooltip = auth_synth_oligarch_ruler_enforcers_tt
 			pop_category_rulers_upkeep_mult = 0.15
 			planet_bureaucrats_unity_produces_mult = 0.25
 			planet_bureaucrats_upkeep_mult = -0.10
@@ -430,7 +432,7 @@ auth_oligarchic = {
 			has_country_flag = synth_virtual
 		}
 		modifier = {
-			custom_tooltip = auth_cyber_oligarch_ruler_enforcers_tt
+			custom_tooltip = auth_synth_oligarch_ruler_enforcers_tt
 			pop_category_rulers_upkeep_mult = 0.15
 			edicts_upkeep_mult = -0.2
 			edicts_cost_mult = -0.75
@@ -540,6 +542,7 @@ auth_oligarchic = {
 			councilor_exp_gain = 0.25
 			leaders_upkeep_mult = -0.25
 			election_term_years_add = 20
+			show_only_custom_tooltip = no
 		}
 	}
 
@@ -558,6 +561,8 @@ auth_oligarchic = {
 			leader_initial_skill = 2
 			leaders_upkeep_mult = -0.25
 			leader_recruitment_age = -15
+			negative_traits_leader = 1
+			show_only_custom_tooltip = no
 		}
 	}
 
@@ -654,16 +659,17 @@ auth_dictatorial = {
 		trigger = {
 			is_scope_valid = yes
 			has_country_flag = cyber_collectivist
-			exists = ruler
-			ruler = { leader_class = official }
+			ruler? = {
+				leader_class = official
+			}
 		}
 		modifier = {
 			custom_tooltip = auth_cyber_dictatorial_collectivist_official_tt
 			show_only_custom_tooltip = yes
-			planet_jobs_worker_produces_mult = 0.15
-			planet_stability_add = 3
-			edicts_upkeep_mult = -0.25
-			pop_amenities_usage_mult = 0.15
+			planet_jobs_worker_produces_mult = @cyber_collectivist_official_worker_output
+			planet_stability_add = @cyber_collectivist_stability
+			edicts_upkeep_mult = @cyber_collectivist_edicts_upkeep
+			pop_amenities_usage_mult = @cyber_collectivist_amenities_usage
 		}
 	}
 
@@ -675,17 +681,18 @@ auth_dictatorial = {
 		trigger = {
 			is_scope_valid = yes
 			has_country_flag = cyber_collectivist
-			exists = ruler
-			ruler = { leader_class = commander }
+			ruler? = {
+				leader_class = commander
+			}
 		}
 		modifier = {
 			custom_tooltip = auth_cyber_dictatorial_collectivist_commander_tt
 			show_only_custom_tooltip = yes
-			ship_fire_rate_mult = 0.10
-			job_soldier_stability_add = 1
-			planet_stability_add = 3
-			edicts_upkeep_mult = -0.25
-			pop_amenities_usage_mult = 0.15
+			ship_fire_rate_mult = @cyber_collectivist_commander_ship_fire_rate
+			job_soldier_stability_add = @cyber_collectivist_commander_soldier_stability
+			planet_stability_add = @cyber_collectivist_stability
+			edicts_upkeep_mult = @cyber_collectivist_edicts_upkeep
+			pop_amenities_usage_mult = @cyber_collectivist_amenities_usage
 		}
 	}
 
@@ -697,16 +704,17 @@ auth_dictatorial = {
 		trigger = {
 			is_scope_valid = yes
 			has_country_flag = cyber_collectivist
-			exists = ruler
-			ruler = { leader_class = scientist }
+			ruler? = {
+				leader_class = scientist
+			}
 		}
 		modifier = {
 			custom_tooltip = auth_cyber_dictatorial_collectivist_scientist_tt
 			show_only_custom_tooltip = yes
-			all_technology_research_speed = 0.10
-			planet_stability_add = 3
-			edicts_upkeep_mult = -0.25
-			pop_amenities_usage_mult = 0.15
+			all_technology_research_speed = @cyber_collectivist_scientist_research_speed
+			planet_stability_add = @cyber_collectivist_stability
+			edicts_upkeep_mult = @cyber_collectivist_edicts_upkeep
+			pop_amenities_usage_mult = @cyber_collectivist_amenities_usage
 		}
 	}
 
@@ -727,9 +735,9 @@ auth_dictatorial = {
 		modifier = {
 			custom_tooltip = auth_cyber_dictatorial_collectivist_vacant_tt
 			show_only_custom_tooltip = no
-			planet_stability_add = 3
-			edicts_upkeep_mult = -0.25
-			pop_amenities_usage_mult = 0.15
+			planet_stability_add = @cyber_collectivist_stability
+			edicts_upkeep_mult = @cyber_collectivist_edicts_upkeep
+			pop_amenities_usage_mult = @cyber_collectivist_amenities_usage
 		}
 	}
 
@@ -867,6 +875,7 @@ auth_dictatorial = {
 			planet_bureaucrats_produces_mult = 0.15
 			planet_enforcers_produces_mult = 0.15
 			pop_ethic_spiritualist_attraction_mult = 0.5
+			show_only_custom_tooltip = no
 		}
 	}
 
@@ -885,6 +894,7 @@ auth_dictatorial = {
 			council_agenda_progress_speed = 0.25
 			council_agenda_cooldown_mult = -0.25
 			planet_bureaucrats_upkeep_mult = -0.25
+			show_only_custom_tooltip = no
 		}
 	}
 
@@ -1152,6 +1162,7 @@ auth_imperial = {
 			envoy_harm_relations_mult = 0.50
 			envoy_attunement_mult = 0.50
 			planet_crime_add = 20
+			show_only_custom_tooltip = no
 		}
 	}
 
@@ -1176,6 +1187,7 @@ auth_imperial = {
 			leader_lifespan_add = 10
 			logistic_growth_mult = -0.05
 			planet_pop_assembly_mult = -0.05
+			show_only_custom_tooltip = no
 		}
 	}
 
@@ -1420,6 +1432,7 @@ auth_hive_mind = {
 			planet_jobs_complex_drone_produces_mult = 0.1
 			empire_size_mult = -0.1
 			pop_environment_tolerance = -0.1
+			show_only_custom_tooltip = no
 		}
 	}
 
@@ -1446,6 +1459,7 @@ auth_hive_mind = {
 			planet_stability_mult = 0.10
 			council_agenda_progress_speed = 0.3
 			council_agenda_finishing_effect_duration_mult = 0.3
+			show_only_custom_tooltip = no
 		}
 	}
 }
@@ -1579,6 +1593,7 @@ auth_machine_intelligence = {
 			psionic_aura_hyperlane_range_add = 2
 			council_agenda_progress_speed = 0.25
 			station_researchers_produces_mult = -0.2
+			show_only_custom_tooltip = no
 		}
 	}
 	#Corporeal Machines
@@ -1607,6 +1622,7 @@ auth_machine_intelligence = {
 			pop_cat_complex_drone_bonus_workforce_mult = 0.1
 			leaders_upkeep_mult = -0.5
 			planet_bureaucrats_upkeep_mult = 0.3
+			show_only_custom_tooltip = no
 		}
 	}
 }
@@ -1852,6 +1868,7 @@ auth_corporate = {
 			operations_influence_cost_mult = -0.2
 			branch_office_value_mult = 0.2
 			envoys_add = 1
+			show_only_custom_tooltip = no
 		}
 	}
 
@@ -1871,6 +1888,7 @@ auth_corporate = {
 			council_agenda_early_activation_cost_mult = -0.25
 			council_agenda_cooldown_mult = -0.25
 			species_leader_exp_gain = 0.25
+			show_only_custom_tooltip = no
 		}
 	}
 
