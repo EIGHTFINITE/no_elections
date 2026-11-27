@@ -1190,6 +1190,7 @@ auth_imperial = {
 		}
 		modifier = {
 			custom_tooltip = auth_shroud_imperial_corporeal_tt
+			planet_telepaths_unity_produces_add = -0.5
 			psionic_pop_bonus_workforce_mult = -0.2
 			psionic_aura_effectiveness_mult = 0.25
 			envoy_improve_relations_mult = 0.50
